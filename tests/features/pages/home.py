@@ -10,11 +10,9 @@ class HomePageLocator(object):
 
 class HomePage(object):
 
-    def __init__(self, browser, host):
-        self.driver = browser.driver
-        self.host = host
-        relative_url = reverse('home')
-        self.url = f'{host}{relative_url}'
+    def __init__(self, context):
+        self.driver = context.browser.driver
+        self.url = context.get_url(reverse('home'))
 
     def find(self, *locator):
         return self.driver.find_element(*locator)

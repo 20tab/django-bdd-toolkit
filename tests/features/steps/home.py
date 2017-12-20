@@ -5,7 +5,7 @@ from pages.home import HomePage, HomePageLocator
 
 @given('a homepage')
 def homepage_url(context):
-    context.page = HomePage(context.browser, context.test.live_server_url)
+    context.page = HomePage(context)
 
 
 @when('I visit the homepage')
