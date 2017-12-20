@@ -7,5 +7,6 @@ parse-type==0.4.2
 pytz==2017.3
 selenium==3.8.0
 six==1.11.0
+splinter==0.7.7
 waiting==1.4.1
 webium==1.2.1

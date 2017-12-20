@@ -1,30 +1,13 @@
 from django.urls import reverse
-from selenium.webdriver.common.by import By
+
+from tests.features.pages.base import BasePage
 
 
-class HomePageLocator(object):
-    # Home Page Locators
-
-    LOGO = (By.ID, "logo")
-
-
-class HomePage(object):
+class HomePage(BasePage):
 
     def __init__(self, context):
-        self.driver = context.browser.driver
+        super().__init__(context)
         self.url = context.get_url(reverse('home'))
 
-    def find(self, *locator):
-        return self.driver.find_element(*locator)
-
-    def fill(self, text, *locator):
-        self.find(*locator).send_keys(text)
-
-    def click(self, *locator):
-        self.find(*locator).click()
-
     def visit(self):
-        self.driver.get(self.url)
-
-    def get_page_title(self):
-        return self.driver.title
+        self.browser.visit(self.url)

@@ -1,6 +1,6 @@
 from behave import given, when, then
 
-from pages.home import HomePage, HomePageLocator
+from tests.features.pages.home import HomePage
 
 
 @given('a homepage')
@@ -15,5 +15,4 @@ def visit_url(context):
 
 @then('I should see the 20tab logo')
 def check_logo(context):
-    logo = HomePageLocator().LOGO
-    context.test.assertTrue(context.page.find(*logo))
+    context.test.assertTrue(context.page.browser.find_by_id('logo'))
