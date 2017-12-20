@@ -1,6 +1,6 @@
-Feature: Load Home
+Feature: Homepage
 
-    Scenario Outline: User load home
-        Given a user visits the site
-        When I load homepage
-        Then I should see the 20tab Logo
+    Scenario: User visits homepage
+        Given a homepage
+        When I visit the homepage
+        Then I should see the 20tab logo

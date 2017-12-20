@@ -3,16 +3,10 @@ from selenium import webdriver
 
 class Browser(object):
 
-    base_url = 'http://localhost:8000'
     driver = webdriver.Chrome()
-    driver.implicitly_wait(10)
+    driver.implicitly_wait(30)
+    driver.set_page_load_timeout(30)
+    driver.maximize_window()
 
-    def close(self):
-        self.driver.quit()
-
-    def visit(self, location=''):
-        url = self.base_url + location
-        self.driver.get(url)
-
-    def find_by_id(self, selector):
-        return self.driver.find_element_by_id(selector)
+    def close(context):
+        context.driver.close()
