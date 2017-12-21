@@ -1,7 +1,12 @@
+"""Define base page model."""
+from splinter import Browser
 
 
-class BasePage(object):
+class BasePage:
+    """Base page providing a browser, a url and basic interactions."""
 
-    def __init__(self, context):
-        self.context = context
-        self.browser = context.browser
+    url = None
+
+    def __init__(self, context, driver_name='chrome', *args, **kwargs):
+        """Initialize the browser."""
+        self.browser = Browser(driver_name=driver_name, *args, **kwargs)
