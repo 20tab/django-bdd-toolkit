@@ -1,6 +1,7 @@
+"""Configure urls."""
 from django.conf.urls import url
-from example.views import HomeView
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
 ]

@@ -1,12 +1,5 @@
 behave==1.2.5
 behave-django==1.0.0
 Django==2.0
-future==0.16.0
-parse==1.8.2
-parse-type==0.4.2
-pytz==2017.3
 selenium==3.8.0
-six==1.11.0
 splinter==0.7.7
-waiting==1.4.1
-webium==1.2.1
