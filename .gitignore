@@ -105,4 +105,4 @@ ENV/
 *.sqlite3
 
 # PyCharm
-.idea/*
+#.idea/*
