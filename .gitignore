@@ -103,3 +103,6 @@ ENV/
 
 # database
 *.sqlite3
+
+# PyCharm
+.idea/*
