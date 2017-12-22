@@ -1,7 +1,7 @@
 """Define steps for the home feature."""
 from behave import given, when, then
 
-from tests.features.pages.home import HomePage
+from tests.pages.home import HomePage
 
 
 @given('a homepage')

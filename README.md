@@ -1,2 +1,67 @@
 # bdd-framework
-A Django2+, Py3.6+, Selenium3+, PageObject pattern framework to easily setup BDD tests
+A Django2+, Py3.6+, Selenium3+ pattern framework to easily setup BDD tests,
+using 
+[behave](https://github.com/behave/behave),
+[behave-django](https://github.com/behave/behave-django),
+and [splinter](https://github.com/cobrateam/splinter).
+
+## Install
+In a Python 3.6, Django 2+ environment, install the following packages:
+
+```shell
+pip install behave behave-django selenium splinter
+```
+
+## Configuration
+Create a `behave.ini` file in the Django project root directory containing to
+indicate the paths to the testing directories (or the `feature` directory
+inside of them), e.g.:
+```ini
+[behave]
+paths = tests/bdd/
+        myapp/tests/bdd/
+        myotherapp/tests/bdd/
+```
+
+## Testing
+Inside each BDD testing directory, test files should be created according to
+the following structure (the `steps` directory is often found
+inside the `feature` directory):
+```shell
+bdd/
+    __init__.py
+    features/
+        myfeature.feature
+    pages/
+        __init__.py
+        mypage.py
+    steps/
+        __init__.py
+        mysteps.py
+```
+
+### 1. Features
+Define BDD features written in
+[Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin)
+in `.feature` files inside a directory named `features`.
+
+### 2. Steps
+Implement each step defined in the feature files, in Python files inside the
+`steps` directory. Use `behave` decorators: `given`, `when` and `then` (`and`
+and `but` steps should be decorated as the preceding main step).
+
+### 3. Pages (Optional)
+In case a web UI is being tested, it is useful to define page objects tailored
+on specific web pages. `splinter` is used to provide basic interaction with the
+pages and lets the user choose which `selenium` driver (e.g. Chrome, Firefox or
+PhantomJS) to use. Each page class should be defined in Python files inside the
+`pages` directory and should inherit from the `BasePage` class found in
+`pages/base.py`. Each page is independent and might be instantiated with a
+different driver. The tools provided by `splinter` are accessible (and
+extendable) via `self.browser` (e.g. it might be convenient to define locators
+as the logo one in the smaple project).
+
+## Resources
+* [behave documentation](https://behave.readthedocs.io/en/latest/index.html)
+* [behave-django documentation](https://behave-django.readthedocs.io/en/latest/)
+* [splinter documentation](https://splinter.readthedocs.io/en/latest/)
