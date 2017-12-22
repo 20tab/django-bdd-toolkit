@@ -1,5 +1,6 @@
 Feature: Homepage
 
+    @browser.firefox
     Scenario: User visits homepage
         Given a homepage
         When I visit the homepage

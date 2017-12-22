@@ -7,6 +7,6 @@ class BasePage:
 
     url = None
 
-    def __init__(self, context, driver_name='chrome', *args, **kwargs):
+    def __init__(self, context, *args, **kwargs):
         """Initialize the browser."""
-        self.browser = Browser(driver_name=driver_name, *args, **kwargs)
+        self.browser = context.browser
