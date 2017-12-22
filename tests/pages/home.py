@@ -1,7 +1,7 @@
 """Define homepage page model."""
 from django.urls import reverse
 
-from tests.features.pages.base import BasePage
+from tests.pages.base import BasePage
 
 
 class HomePage(BasePage):
