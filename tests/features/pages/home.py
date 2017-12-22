@@ -17,7 +17,6 @@ class HomePage(BasePage):
         """Return the logo web element."""
         return self.browser.find_by_id('logo')
 
-
     def visit(self):
         """Use the browser to visit the homepage url."""
         self.browser.visit(self.url)
