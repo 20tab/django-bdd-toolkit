@@ -12,6 +12,12 @@ class HomePage(BasePage):
         self.url = context.get_url(reverse('home'))
         super().__init__(context, *args, **kwargs)
 
+    @property
+    def logo_locator(self):
+        """Return the logo web element."""
+        return self.browser.find_by_id('logo')
+
+
     def visit(self):
         """Use the browser to visit the homepage url."""
         self.browser.visit(self.url)

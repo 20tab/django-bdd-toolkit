@@ -19,4 +19,4 @@ def visit_page(context):
 @then('I should see the 20tab logo')
 def check_logo(context):
     """Check the presence of the logo element."""
-    context.test.assertTrue(context.page.browser.find_by_id('logo'))
+    context.test.assertTrue(context.page.logo_locator)
