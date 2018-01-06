@@ -22,6 +22,11 @@ paths = tests/bdd/
         myapp/tests/bdd/
         myotherapp/tests/bdd/
 ```
+**Tips**
+Remember to set behave_django in your installed apps:
+
+```INSTALLED_APPS += ('behave_django',)
+```
 
 ## Testing
 Inside each BDD testing directory, test files should be created according to
