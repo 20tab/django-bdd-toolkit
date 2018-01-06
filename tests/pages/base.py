@@ -1,5 +1,4 @@
 """Define base page model."""
-from splinter import Browser
 
 
 class BasePage:
