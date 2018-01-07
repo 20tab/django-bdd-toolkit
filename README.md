@@ -25,7 +25,8 @@ paths = tests/bdd/
 **Tips**
 Remember to set behave_django in your installed apps:
 
-```INSTALLED_APPS += ('behave_django',)
+```python
+INSTALLED_APPS += ('behave_django',)
 ```
 
 ## Testing
