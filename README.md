@@ -22,8 +22,19 @@ paths = tests/bdd/
         myapp/tests/bdd/
         myotherapp/tests/bdd/
 ```
+
+#### Django Settings
+In order for the tests to locate your project static files, it is important to
+correctly set the `STATICFILES_DIRS`, e.g.:
+
+```python
+STATICFILES_DIRS = (
+    os.path.abspath('static'),
+)
+```
+
 **Tips**
-Remember to set behave_django in your installed apps:
+Do not forget to include `behave_django` among the installed apps:
 
 ```python
 INSTALLED_APPS += ('behave_django',)
