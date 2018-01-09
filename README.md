@@ -60,7 +60,10 @@ bdd/
 ### 1. Features
 Define BDD features written in
 [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin)
-in `.feature` files inside a directory named `features`.
+in `.feature` files inside a directory named `features`. In case a web UI test
+is performed, the Chrome browser is used by default, nonetheless this can be
+changed decorating a certain Scenario with `@browser.firefox` or
+`@browser.phantomjs`.
 
 ### 2. Steps
 Implement each step defined in the feature files, in Python files inside the
