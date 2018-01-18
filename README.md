@@ -70,6 +70,13 @@ is performed, the Chrome browser is used by default, nonetheless this can be
 changed decorating a certain Scenario with `@browser.firefox` or
 `@browser.phantomjs`.
 
+**Tips**
+Features and scenarios can be tagged as described
+[here](
+https://pythonhosted.org/behave/tutorial.html#controlling-things-with-tags
+), this allows running only a specific subset of tests (e.g. those related to a
+given user story).
+
 ### 2. Steps
 Implement each step defined in the feature files, in Python files inside the
 `steps` directory. Use `behave` decorators: `given`, `when` and `then` (`and`
@@ -88,5 +95,7 @@ as the logo one in the smaple project).
 
 ## Resources
 * [behave documentation](https://behave.readthedocs.io/en/latest/index.html)
-* [behave-django documentation](https://behave-django.readthedocs.io/en/latest/)
+* [behave-django documentation](
+    https://behave-django.readthedocs.io/en/latest/
+)
 * [splinter documentation](https://splinter.readthedocs.io/en/latest/)
