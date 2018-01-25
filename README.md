@@ -12,6 +12,20 @@ In a Python 3.6, Django 2+ environment, install the following packages:
 pip install behave behave-django selenium splinter
 ```
 
+### Behave
+
+*If you have some behave related errors try to install it from Github as explained in the [behave documentations](http://behave.readthedocs.io/en/latest/install.html#using-the-github-repository).*
+
+Run the following command to install the newest version from the Github repository:
+
+```shell
+pip install git+https://github.com/behave/behave
+```
+or (faster option)
+```shell
+pip install https://github.com/behave/behave/archive/master.zip#egg=behave
+```
+
 ## Configuration
 Create a `behave.ini` file in the Django project root directory containing to
 indicate the paths to the testing directories (or the `feature` directory
