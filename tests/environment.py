@@ -1,6 +1,7 @@
 """Define BDD environment."""
 from django.conf import settings
 from splinter import Browser
+from splinter.driver.webdriver.chrome import Options
 
 
 def before_scenario(context, scenario):
@@ -12,8 +13,11 @@ def before_scenario(context, scenario):
     else:
         driver_name = getattr(settings, 'BDD_DEFAULT_BROWSER', 'chrome')
     headless = getattr(settings, 'BDD_HEADLESS_BROWSER', False)
-    language = {'intl.accept_languages': getattr(
-        settings, 'BDD_LANGUAGE_BROWSER', 'en-US')}
+    language = {
+        'intl.accept_languages': getattr(
+            settings, 'BDD_BROWSER_LANGUAGE', 'en-US'
+        )
+    }
     if driver_name == 'firefox':
         preferences = {
             'profile_preferences': language,
