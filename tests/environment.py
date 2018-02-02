@@ -12,25 +12,28 @@ def before_scenario(context, scenario):
         driver_name = 'chrome'
     else:
         driver_name = getattr(settings, 'BDD_DEFAULT_BROWSER', 'chrome')
-    headless = getattr(settings, 'BDD_HEADLESS_BROWSER', False)
+    params = {
+        'driver_name': driver_name,
+        'headless': getattr(settings, 'BDD_HEADLESS_BROWSER', False),
+        'wait_time': getattr(settings, 'BDD_DEFAULT_WAIT_TIME', 5)
+    }
     language = {
         'intl.accept_languages': getattr(
             settings, 'BDD_BROWSER_LANGUAGE', 'en-US'
         )
     }
     if driver_name == 'firefox':
-        preferences = {
+        params.update({
             'profile_preferences': language,
             'capabilities': {'moz:webdriverClick': False},
-        }
+        })
     elif driver_name == 'chrome':
         options = Options()
         options.add_experimental_option('prefs', language)
-        preferences = {'options': options}
-    else:
-        preferences = {}
-    context.browser = Browser(
-        driver_name=driver_name, headless=headless, **preferences)
+        params.update({
+            'options': options
+        })
+    context.browser = Browser(**params)
 
 
 def after_scenario(context, scenario):
