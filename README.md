@@ -1,6 +1,6 @@
 # bdd-framework
 A Django2+, Py3.6+, Selenium3+ pattern framework to easily setup BDD tests,
-using 
+using
 [behave](https://github.com/behave/behave),
 [behave-django](https://github.com/behave/behave-django),
 and [splinter](https://github.com/cobrateam/splinter).
@@ -14,9 +14,9 @@ pip install behave behave-django selenium splinter
 
 ### Behave
 
-*If you have some behave related errors try to install it from Github as explained in the [behave documentations](http://behave.readthedocs.io/en/latest/install.html#using-the-github-repository).*
+*If you have some behave related errors try to install it from GitHub as explained in the [behave documentations](http://behave.readthedocs.io/en/latest/install.html#using-the-github-repository).*
 
-Run the following command to install the newest version from the Github repository:
+Run the following command to install the latest version from the GitHub repository:
 
 ```shell
 pip install git+https://github.com/behave/behave
@@ -42,21 +42,21 @@ In order for the tests to locate your project static files, it is important to
 correctly set the `STATICFILES_DIRS`, e.g.:
 
 ```python
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     os.path.abspath('static'),
-)
+]
 ```
 
 In order to define the default browser for Selenium testing, set
 `BDD_DEFAULT_BROWSER` to either `'chrome'` (the default) or `'firefox'`.
 To enable headless testing (PhantomJS is deprecated), set
-`BDD_HEADLESS_BRWOSER` to `True` (default is `False`).
+`BDD_HEADLESS_BROWSER` to `True` (default is `False`).
 
 **Tips**
 Do not forget to include `behave_django` among the installed apps:
 
 ```python
-INSTALLED_APPS += ('behave_django',)
+INSTALLED_APPS += ['behave_django']
 ```
 
 ## Testing
