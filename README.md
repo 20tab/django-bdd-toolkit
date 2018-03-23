@@ -27,8 +27,7 @@ pip install https://github.com/behave/behave/archive/master.zip#egg=behave
 ```
 
 ## Configuration
-Create a `behave.ini` file in the Django project root directory containing to
-indicate the paths to the testing directories (or the `feature` directory
+Create a `behave.ini` file in the Django project root directory containing the paths to the testing directories (or the `feature` directory
 inside of them), e.g.:
 ```ini
 [behave]
