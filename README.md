@@ -1,4 +1,4 @@
-# bdd-framework
+# django-bdd-toolkit
 A Django2+, Py3.6+, Selenium3+ pattern framework to easily setup BDD tests,
 using
 [behave](https://github.com/behave/behave),
