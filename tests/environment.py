@@ -2,6 +2,7 @@
 from django.conf import settings
 from splinter import Browser
 from splinter.driver.webdriver.chrome import Options
+from pkg_resources import load_entry_point
 
 
 def before_scenario(context, scenario):
@@ -28,6 +29,7 @@ def before_scenario(context, scenario):
             'capabilities': {'moz:webdriverClick': False},
         })
     elif driver_name == 'chrome':
+        load_entry_point('chromedriver-binary==2.37.0', 'console_scripts', 'chromedriver-path')
         options = Options()
         options.add_experimental_option('prefs', language)
         params.update({
