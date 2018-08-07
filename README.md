@@ -48,8 +48,12 @@ STATICFILES_DIRS = [
 
 In order to define the default browser for Selenium testing, set
 `BDD_DEFAULT_BROWSER` to either `'chrome'` (the default) or `'firefox'`.
+
 To enable headless testing (PhantomJS is deprecated), set
 `BDD_HEADLESS_BROWSER` to `True` (default is `False`).
+
+To enable incognito mode for browsers, set
+`BDD_INCOGNITO_BROWSER` to `True` (default is `False`).
 
 **Tips**
 Do not forget to include `behave_django` among the installed apps:
