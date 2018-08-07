@@ -1,6 +1,6 @@
-behave==1.2.5
-behave-django==1.0.0
-Django==2.0
-selenium==3.8.1
-splinter==0.7.7
-chromedriver-binary==2.37.0
+behave==1.2.6
+behave-django==1.1.0
+django==2.1
+selenium==3.14.0
+splinter==0.8.0
+chromedriver-binary==2.41.0

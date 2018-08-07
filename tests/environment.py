@@ -1,8 +1,8 @@
 """Define BDD environment."""
 from django.conf import settings
+from pkg_resources import load_entry_point
 from splinter import Browser
 from splinter.driver.webdriver.chrome import Options
-from pkg_resources import load_entry_point
 
 
 def before_scenario(context, scenario):
@@ -16,6 +16,7 @@ def before_scenario(context, scenario):
     params = {
         'driver_name': driver_name,
         'headless': getattr(settings, 'BDD_HEADLESS_BROWSER', False),
+        'incognito': getattr(settings, 'BDD_INCOGNITO_BROWSER', False),
         'wait_time': getattr(settings, 'BDD_DEFAULT_WAIT_TIME', 5)
     }
     language = {
