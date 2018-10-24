@@ -17,7 +17,8 @@ def before_scenario(context, scenario):
         'driver_name': driver_name,
         'headless': getattr(settings, 'BDD_HEADLESS_BROWSER', False),
         'incognito': getattr(settings, 'BDD_INCOGNITO_BROWSER', False),
-        'wait_time': getattr(settings, 'BDD_DEFAULT_WAIT_TIME', 5)
+        'wait_time': getattr(settings, 'BDD_DEFAULT_WAIT_TIME', 5),
+        'fullscreen': getattr(settings, 'BDD_FULLSCREEN_BROWSER', False),
     }
     language = {
         'intl.accept_languages': getattr(
@@ -30,7 +31,7 @@ def before_scenario(context, scenario):
             'capabilities': {'moz:webdriverClick': False},
         })
     elif driver_name == 'chrome':
-        load_entry_point('chromedriver-binary==2.37.0', 'console_scripts', 'chromedriver-path')
+        load_entry_point('chromedriver-binary==2.43.0', 'console_scripts', 'chromedriver-path')
         options = Options()
         options.add_experimental_option('prefs', language)
         params.update({
