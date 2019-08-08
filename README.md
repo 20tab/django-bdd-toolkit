@@ -68,7 +68,7 @@ bdd/
 Define BDD features written in [Gherkin](https://github.com/cucumber/cucumber/wiki/Gherkin) in `.feature` files inside a directory named `features`. In case a web UI test is performed, the Chrome browser is used by default, nonetheless this can be changed decorating a certain Scenario with `@browser.firefox` or `@browser.phantomjs`.
 
 **Tips**
-Features and scenarios can be tagged as described [here](https://pythonhosted.org/behave/tutorial.html#controlling-things-with-tags), this allows running only a specific subset of tests (e.g. those related to a given user story).
+Features and scenarios can be tagged as described [here](https://behave.readthedocs.io/en/latest/tutorial.html#controlling-things-with-tags), this allows running only a specific subset of tests (e.g. those related to a given user story).
 
 ### 2. Steps
 Implement each step defined in the feature files, in Python files inside the `steps` directory. Use `behave` decorators: `given`, `when` and `then` (`and` and `but` steps should be decorated as the preceding main step).
